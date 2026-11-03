@@ -1,0 +1,57 @@
+{
+  "name": "zascord-desktop",
+  "version": "1.0.0",
+  "description": "Десктоп-обёртка Zascord (Electron) поверх веб-версии на Firebase Hosting",
+  "author": "Zascord Team",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "dependencies": {
+    "electron-updater": "^6.2.1"
+  },
+  "devDependencies": {
+    "electron": "^31.3.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "app.zascord.desktop",
+    "productName": "Zascord",
+    "files": [
+      "main.js"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "build/icon.png"
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "build/icon.icns"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Zascord"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "zakcorporation",
+        "repo": "zascord"
+      }
+    ]
+  }
+}
