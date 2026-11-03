@@ -1,6 +1,6 @@
 # Zascord Desktop (Electron) — Этап 25, пункт 11
 
-Обёртка грузит веб-версию с Firebase Hosting в нативное окно (Windows/Linux/macOS).
+Обёртка грузит веб-версию мессенджера в нативное окно (Windows/Linux/macOS).
 Отдельный бандл приложения не нужен: код живёт на хостинге, обёртка только окно.
 
 ## Запуск
@@ -26,7 +26,3 @@ npm run dist
 `nodeIntegration: false`, `contextIsolation: true`, `sandbox: true` — веб-код не получает
 доступа к Node/API системы; внешние ссылки открываются в системном браузере.
 
-## Примечания
-- Service worker (PWA) внутри Electron тоже работает: офлайн-оболочка переживёт обрыв сети,
-  данные Firestore — из персистентного кэша приложения.
-- Автообновление обёртки: версия в `package.json` + `electron-builder` (publish при желании).
